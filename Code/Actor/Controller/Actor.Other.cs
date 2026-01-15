@@ -1,6 +1,6 @@
 using Sandbox;
 
-public abstract partial class Actor
+public partial class Actor
 {
     public GameObject GetActorPartByTag(string tag )
     {

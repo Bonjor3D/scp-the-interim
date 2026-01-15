@@ -1,6 +1,7 @@
 using Sandbox;
+using System;
 
-public abstract partial class Actor : Component
+public  partial class Actor : Component
 {
 	#region Components
 	public CharacterController characterController;
@@ -15,15 +16,24 @@ public abstract partial class Actor : Component
 	#endregion
 
 	#region General
-	[Property] public GameObject Head;
-	[Property] public GameObject Body;
+	public GameObject Head;
+	public GameObject Body;
+	[Property] public string name;
+
+	public SkinnedModelRenderer smr;
+	public Model model;
+	public Transform HeadTransform;
+	public Transform BodyTransform;
 	#endregion
 
-	protected override void OnAwake()
+	protected override void OnStart()
 	{
+		smr = Components.Get<SkinnedModelRenderer>();
 		characterController = Components.Get<CharacterController>();
-		Head = GetActorPartByTag("head");
-		Body = GetActorPartByTag("body");
+		model = smr.Model;
+
+		Head = smr.GetBoneObject("Head");
+		Body = smr.GetBoneObject("Hips");
 	}
 
 	protected override void OnUpdate()
@@ -31,6 +41,9 @@ public abstract partial class Actor : Component
 		UpdateMovement();
 		UpdateStamina();
 		UpdateStealth();
+
+		Head = smr.GetBoneObject("Head");
+		Body = smr.GetBoneObject("Hips");
 	}
 
 	protected override void OnFixedUpdate()

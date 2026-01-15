@@ -8,6 +8,8 @@ public sealed partial class PlayerController
 		ReadInput();
 		base.BuildVelocity();
 		base.Move();
+
+		if(VelocitySP > 0) {smr.Set("IsWalking", true); smr.Set("Speed", (VelocitySP / WalkSpeed));} else {smr.Set("IsWalking", false); smr.Set("Speed", 1.0f);}
 	}
 
 	public void ReadInput()
@@ -20,5 +22,4 @@ public sealed partial class PlayerController
 		WantsToGoLeft = Input.Down( "moveLeft" );
 		WantsToGoRight = Input.Down( "moveRight" );
 	}
-
 }

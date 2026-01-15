@@ -1,7 +1,7 @@
 using Sandbox;
 using System;
 
-public abstract partial class Actor
+public partial class Actor
 {
 	#region Stamina
 	[Property, Feature("Stamina")] public float MaxStamina = 100f;

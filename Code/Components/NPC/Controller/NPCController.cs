@@ -3,20 +3,22 @@ using Sandbox;
 public sealed partial class NPCController : Actor
 {
     public NavMeshAgent navAgent;
-
-    [Property] public string npcName;
+    public Navigation nav;
 
     protected override void OnStart()
     {
+        base.OnStart();
+
         navAgent = GameObject.GetComponent<NavMeshAgent>();
+        nav = GameObject.AddComponent<Navigation>();
 
         if ( navAgent == null )
         {
-            Log.Error($"NPC {npcName} has NO NavMeshAgent on GameObject!");
+            Log.Error($"NPC {name} has NO NavMeshAgent on GameObject!");
             return;
         }
 
-        Log.Info($"{this} {npcName} NavMeshAgent OK");
+        Log.Info($"{this} {name} NavMeshAgent OK");
     }
 
     protected override void OnUpdate()

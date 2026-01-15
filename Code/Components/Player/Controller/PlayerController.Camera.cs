@@ -3,28 +3,44 @@ using Sandbox;
 public sealed partial class PlayerController
 {
 	#region Camera Parameters
-	[Property, Feature("Camera")] public float MouseSensitivity = 1.0f;
+	[Property, Feature("Camera")] public float MouseSensitivity = 0.1f;
 	[Property, Feature("Camera")] public bool IsYawInverted;
 	[Property, Feature("Camera")] public bool IsPitchInverted;
     [Property, Feature("Camera")] public CameraComponent playerCamera;
+
+	private float viewYaw;
+	private float viewPitch;
+
+
 	#endregion
 
 	public void UpdateCamera()
 	{
-		var eyeAngles = Head.Transform.Rotation.Angles();
+		float pitchSign = IsPitchInverted ? -1f : 1f;
+		float yawSign   = IsYawInverted   ? -1f : 1f;
 
-		float pitchSign = IsPitchInverted ? -0.1f : 0.1f;
-		float yawSign   = IsYawInverted   ?  0.1f : -0.1f;
+		viewPitch += Input.MouseDelta.y * pitchSign * MouseSensitivity;
+		viewYaw   += Input.MouseDelta.x * yawSign   * MouseSensitivity;
 
-		eyeAngles.pitch += Input.MouseDelta.y * pitchSign * MouseSensitivity;
-		eyeAngles.yaw   += Input.MouseDelta.x * yawSign   * MouseSensitivity;
+		viewPitch = viewPitch.Clamp(-89.9f, 89.9f);
 
-		eyeAngles.roll = 0f;
-		eyeAngles.pitch = eyeAngles.pitch.Clamp( -89.9f, 89.9f );
+		WorldRotation = Rotation.FromYaw(viewYaw);
 
-		Head.Transform.Rotation = eyeAngles.ToRotation();
+		var cameraRotation = Rotation.From(
+			viewPitch,
+			viewYaw,
+			0f
+		);
 
-        playerCamera.Transform.Position = Head.Transform.Position;
-        playerCamera.Transform.Rotation = Head.Transform.Rotation;
+		Vector3 cameraOffset =
+			Vector3.Up * 100f +
+			playerCamera.WorldRotation.Forward * 20f;
+
+		playerCamera.WorldPosition = WorldPosition + cameraOffset;
+
+
+
+		playerCamera.WorldRotation = cameraRotation;
 	}
+
 }

@@ -1,6 +1,7 @@
+using Microsoft.VisualBasic;
 using Sandbox;
 
-public abstract partial class Actor
+public partial class Actor
 {
 	#region Movement Parameters
 	[Property, Feature("Movement"), Group("Speed")] public float WalkSpeed = 200f;
@@ -12,7 +13,8 @@ public abstract partial class Actor
 	[Property, Feature("Movement")] public float GroundControl = 4f;
 	#endregion
 
-	private Vector3 Velocity;
+	public Vector3 Velocity;
+	public float VelocitySP;
 
 	protected bool WantsToCrouch;
 	protected bool WantsToRun;
@@ -21,6 +23,7 @@ public abstract partial class Actor
 	protected bool WantsToGoBackward;
 	protected bool WantsToGoLeft;
 	protected bool WantsToGoRight;
+	private AnimParam<bool> AnimIsWalking;
 
 	public virtual void UpdateMovement()
 	{
@@ -39,7 +42,8 @@ public abstract partial class Actor
 	public void BuildVelocity()
 	{
 		var wishDir = Vector3.Zero;
-		var rot = Head.Transform.Rotation;
+
+		var rot = WorldRotation;
 
 		if (WantsToGoForward) wishDir += rot.Forward;
 		if (WantsToGoBackward) wishDir += rot.Backward;
@@ -57,6 +61,8 @@ public abstract partial class Actor
 			WalkSpeed;
 
 		Velocity = wishDir * speed;
+		VelocitySP = Velocity.Length;
+        if(VelocitySP > 0) {smr.Set("IsWalking", true);} else {smr.Set("IsWalking", false);}
 	}
 
 	public void Move()

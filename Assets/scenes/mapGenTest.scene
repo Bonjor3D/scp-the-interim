@@ -1,0 +1,167 @@
+{
+  "__guid": "0cf65e7d-9a45-497c-8adb-c5bcc47f6d69",
+  "GameObjects": [
+    {
+      "__guid": "242cc0cd-31a5-4391-a2f6-32450a7c249e",
+      "__version": 2,
+      "__Prefab": "prefabs/player_test.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "70fbb0bb-5266-4d56-88eb-6422b372ee33"
+            },
+            "Property": "Name",
+            "Value": "player"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "70fbb0bb-5266-4d56-88eb-6422b372ee33"
+            },
+            "Property": "Scale",
+            "Value": "0.5,0.5,0.5"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "9acc8266-5bd2-4fed-a1b4-d7b6e0103a63"
+            },
+            "Property": "Center",
+            "Value": "0,0,90"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "9acc8266-5bd2-4fed-a1b4-d7b6e0103a63"
+            },
+            "Property": "Scale",
+            "Value": "30,30,180"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "70fbb0bb-5266-4d56-88eb-6422b372ee33": "242cc0cd-31a5-4391-a2f6-32450a7c249e",
+        "465d0a12-ce62-4c88-b0bd-e6db8ad54e20": "1723bdf5-506a-4b4c-8eb4-649b729ebdb4",
+        "a30271a5-4c18-4811-8493-b486f0f20601": "347c072c-99a3-4f9f-a350-65f79a5868aa",
+        "9acc8266-5bd2-4fed-a1b4-d7b6e0103a63": "29996bf0-64fc-452e-b469-cdfec134c274",
+        "3ae9dbc6-f7d9-42e6-8382-70abb21620c3": "1139b642-03e2-4c78-ad11-4939435e3f06",
+        "d464d2f1-3dea-47d3-9314-0d0e3cd7fc93": "d71844b8-7371-4fe3-aebe-011d6f81c036",
+        "660c4226-01e7-42f0-ba22-167bc61a1a31": "f8fbefab-dfb7-4b98-b473-c61e25689d12",
+        "8b918c37-add9-46ee-b8e7-058dfb57d0ed": "adddf02a-5cb6-4c87-a295-ab41b21c686d",
+        "b3de8f44-10d1-4561-957c-188e8d0efaaf": "a12d603f-383b-4a91-8533-d21357bb7514",
+        "6a8cbebb-0863-4519-a911-6ffe94da1306": "a256d51c-9787-4983-8405-1b502f88468e",
+        "fa423fed-76cc-49a0-a2d2-de8423f3fc4c": "d2011a57-436f-4df1-93ea-8bd6919dad0f",
+        "985e31ae-3ae0-4e2b-a716-827c18983e1d": "98327c97-9884-42d3-bf9f-b3be2bf41721",
+        "04c5ca59-b1e3-447c-a99b-062db5c53de6": "4a597aab-5784-4b31-94cf-d6374f2deeb0",
+        "49e0e669-b524-4333-9421-8cf80982a84a": "a4938864-90fd-45cd-9400-3b3083d0ba6c",
+        "343a47c2-4d56-493f-aeb1-a652eef8af82": "3fa61cc3-2065-4f74-8e48-9bed50a9ec07",
+        "0121472f-9c24-4c15-b4ab-6785c60333c2": "3ff609e8-36a6-4258-8c56-2d4b1e774121",
+        "0ee46559-55a2-4e3c-aa5e-ca75e6505b2e": "e2b46e7a-1c60-417c-be6e-47fa3a61a593",
+        "428a8f48-661d-4729-b3c2-ed6a3c843569": "92c9f89c-ef47-42fe-8933-5c58d7b81873",
+        "3327fa15-d850-44d4-84af-789c795c8a36": "a2592eaa-f784-4ccc-9165-666ca5f0c494",
+        "462f7b0e-56d5-4ee1-b9fa-649cdb1deffc": "30884973-4534-427e-88c3-653ef52d69a7",
+        "8f2d25d9-fe9f-42fb-a496-42170870b7fb": "9a34a63f-b42e-4ffc-b2f0-44270d56af46",
+        "dbc6c8e3-b3e1-40f8-b85c-d38ece8e4e06": "d99cc2cc-f80f-4845-a1b8-32c39201af6a",
+        "f2feb514-6c28-408c-a9b9-f4ada9f9b8f2": "75e764da-9be1-4c9e-a860-d70d499b1013",
+        "ba9192ab-c8c8-408f-a572-614f871a5e09": "69ef4528-46d3-4e3b-a52d-1c8236279273",
+        "c9ea6068-d13f-477f-bf23-f7f7fe685aa8": "aece6a36-ab24-4859-bacf-d4dc25c2405e",
+        "9d589dd1-0204-45e3-bd81-2740f418c804": "4a3e0011-06c9-48f4-9adf-7c0f6fe159c0",
+        "c5f29bef-6e47-4d52-bad6-ef3807b4edad": "249f957f-2bac-4441-aabd-100a0a2d82da",
+        "e3314dbd-7345-4a00-8a6c-e917ebfd297a": "0d39fb13-bc29-42f9-af00-de88b7d419d4",
+        "21bfa3dc-9ff9-44f9-8f44-23852afa413d": "9d1dd629-3847-4835-a23c-1b002ac34227",
+        "1c10e932-a3ff-4510-8c92-8f4e7791a29a": "3ff8a33a-45c3-4abb-9952-c6f4dd25e3dc",
+        "f3e615af-a2ad-43d6-8041-c9b2ca0582a1": "ae9df3cf-f6ec-4717-83a9-76712600b109",
+        "5a1351fd-428c-4bcf-9304-0ce11f356e9b": "f2d8d591-9dcc-4cb5-a457-7b9168d7f0be",
+        "b786bca8-b678-4e2e-a9c8-64873dec510a": "07de5636-eec0-4967-8213-118247d0547d",
+        "b783fc9a-43dc-45b4-b20e-1a15c934f1b5": "cf6b383f-ca68-4638-a015-ba2f26ce3807",
+        "ea7d14b2-e5e0-46b8-b2d6-2d7ae2cc6cd0": "ca6228f0-7147-4a76-acae-499c743f5a27",
+        "6028f95b-9950-4f3c-94d1-311919b69381": "5ce3dfce-77ac-434b-a2b7-f50aa0db30c8",
+        "fe7f05f9-4d1b-4279-8e7a-6d7d9d49a013": "4b3e62eb-9efc-4b1e-86d7-066d45deae06",
+        "cb21ca8d-8d0a-4057-a314-cdec1f677564": "70d99fe4-c53f-4925-b718-df95328779d8"
+      }
+    },
+    {
+      "__guid": "fbb0bcb8-6bd4-4e82-bda3-6a7f4a68b21c",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "map",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [],
+      "Children": [
+        {
+          "__guid": "b9e841e2-2dd2-4a47-ae8c-d6bc38324551",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "Sun",
+          "Position": "0,0,0",
+          "Rotation": "0.1584937,0.5915064,0.1584937,0.774519",
+          "Scale": "1,1,1",
+          "Tags": "light_directional,light",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.DirectionalLight",
+              "__guid": "c58d4926-fcd4-483c-b243-e9954d0a1a3a",
+              "__enabled": true,
+              "Flags": 0,
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.91373,0.98039,1,1",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Shadows": true,
+              "SkyColor": "0,0,0,0"
+            }
+          ],
+          "Children": []
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "NetworkInterpolation": true,
+    "TimeScale": 1,
+    "WantsSystemScene": true,
+    "Metadata": {},
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "ResourceVersion": 3,
+  "Title": null,
+  "Description": null,
+  "__references": [],
+  "__version": 3
+}

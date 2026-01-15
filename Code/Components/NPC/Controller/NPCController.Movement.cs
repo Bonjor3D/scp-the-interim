@@ -1,46 +1,37 @@
 using Sandbox;
+using System;
 
 public sealed partial class NPCController
 {
+
+	public event Action<NPCController, Mark> OnMarkReached;
+	public Mark currentMark;
+	private const float ReachDistance = 50f;
+
 	public override void UpdateMovement()
 	{
-
+		CheckMarkReached();
+        VelocitySP = navAgent.Velocity.Length;
+        if(VelocitySP > 0) {smr.Set("IsWalking", true); smr.Set("Speed", (VelocitySP / WalkSpeed));} else {smr.Set("IsWalking", false); smr.Set("Speed", 1.0f);}
 	}
 
-	public void GoToMarkById( string markId )
-	{
-		var mark = MarkManager.GetMarkById(markId);
+	private void CheckMarkReached()
+    {
+        if ( currentMark == null )
+            return;
 
-		if ( mark == null )
-		{
-			Log.Error($"Mark '{markId}' not found");
-			return;
-		}
+        float dist = Vector3.DistanceBetween(
+            WorldPosition,
+            currentMark.WorldPosition
+        );
 
-		if ( navAgent == null )
-		{
-			Log.Error("NavMeshAgent is NULL");
-			return;
-		}
+        if ( dist <= ReachDistance )
+        {
+            var reachedMark = currentMark;
+            currentMark = null;
 
-		navAgent.MoveTo( mark.Transform.Position );
-	}
-
-	public void GoToMark( Mark navMark )
-	{
-		if ( navMark == null )
-		{
-			Log.Error("navMark is NULL");
-			return;
-		}
-
-		if ( navAgent == null )
-		{
-			Log.Error("NavMeshAgent is NULL");
-			return;
-		}
-
-		navAgent.MoveTo( navMark.Transform.Position );
-	}
-
+            reachedMark.UnregisterNPC(this);
+            OnMarkReached?.Invoke(this, reachedMark);
+        }
+    }
 }
